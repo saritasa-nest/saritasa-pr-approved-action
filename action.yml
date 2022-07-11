@@ -1,0 +1,16 @@
+name: 'pr-approves-check'
+description: 'Github Action that checks whether a PR has required number of unique approves and has not any requests for changes.'
+branding:
+  icon: 'check'
+  color: 'green'
+author: 'panov-aleksey-saritasa'
+inputs:
+  requiredApprovesAmount:
+    description: 'The minimal required amount of unique approves for a pull request.'
+    default: 1
+outputs:
+  isApproved:
+    description: 'If the PR has required number of approves and there are no requests for changes, this value is set to true.'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
