@@ -1,6 +1,6 @@
 # saritasa-pr-approved-action
 
-Github Action that checks whether a PR has required number of unique approves and has not any requests for changes.
+Github Action that checks whether a PR has required number of unique approves and doesn't have any requests for changes.
 
 ## Inputs
 

@@ -1,4 +1,4 @@
-name: PR Approves Check Example Job
+name: PR Approves Check Job
 
 on:
   pull_request:

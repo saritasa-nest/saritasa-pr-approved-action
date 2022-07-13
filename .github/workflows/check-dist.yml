@@ -8,7 +8,7 @@ name: Check dist/
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - '**.md'
   pull_request:
@@ -34,7 +34,6 @@ jobs:
       - name: Rebuild the dist/ directory
         run: |
           npm run build
-          npm run package
 
       - name: Compare the expected and actual dist/ directories
         run: |
