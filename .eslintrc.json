@@ -1,0 +1,20 @@
+{
+    "plugins": ["@typescript-eslint"],
+    "parser": "@typescript-eslint/parser",
+    "extends": ["plugin:@typescript-eslint/recommended"],
+    "parserOptions": {
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+    },
+    "overrides": [
+      {
+        "files": ["*.ts", "*.js"],
+        "extends": ["@saritasa/eslint-config-saritasa"],
+        "rules": {
+          "no-console": "off",
+          "jsdoc/require-jsdoc": "off",
+          "@typescript-eslint/no-implicit-any-catch": "off"
+        }
+      }
+    ]
+}
