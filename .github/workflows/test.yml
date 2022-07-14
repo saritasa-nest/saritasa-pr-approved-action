@@ -1,0 +1,27 @@
+name: PR Approves Check Example Job
+
+on:
+  pull_request:
+    types: [review_requested]
+  pull_request_review:
+    types: [submitted]
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  onSubmit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: ./
+        id: 'leadsCheck'
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config: .github/test-config.yml
+
+      - run: echo "Leads are invited!"
+        if: steps.leadsCheck.outputs.areLeadReviewersInvited == 'true'
+

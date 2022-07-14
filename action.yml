@@ -1,0 +1,7 @@
+name: 'pr-leads-check-event'
+inputs:
+  config:
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
